@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:general_movies/routing/RouteGenerator.dart';
 
 import 'bloc/CounterBloc.dart';
 import 'bloc/CounterEvent.dart';
@@ -18,7 +19,8 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
+      initialRoute: '/',
+      onGenerateRoute: RouteGenerator.generateRoute
     );
   }
 }
