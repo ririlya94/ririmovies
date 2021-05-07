@@ -68,9 +68,19 @@ class GenreList extends StatelessWidget {
           padding: const EdgeInsets.all(8),
           itemCount: genreList.length,
           itemBuilder: (BuildContext context, int index) {
-            return Container(
-              height: 50,
-              child: Center(child: Text('${genreList[index].title}')),
+            // return Container(
+            //   height: 50,
+            //   child: Center(child: Text('${genreList[index].title}')),
+            // );
+            return InkWell(
+              child: Container(
+                height: 50,
+                child: Center(child: Text('${genreList[index].title}')),
+              ),
+              onTap: () => Navigator.of(context).pushNamed(
+                '/movieList',
+                arguments: genreList[index].id,
+              ),
             );
           }
       )
